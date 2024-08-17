@@ -17,13 +17,12 @@ class CFG:
     class_names = ['Seizure', 'LPD', 'GPD', 'LRDA', 'GRDA', 'Other']
     label2name = dict(enumerate(class_names))
     name2label = {v: k for k, v in label2name.items()}
+    BASE_PATH = "./data"
+    SPEC_DIR = "./data/npy/dataset/hms-hbac"
+    NPY_SAVE_DIR = "./data/npy/dataset/hms-hbac"
 
 
 # Set seeds for reproducibility
 torch.manual_seed(CFG.seed)
 random.seed(CFG.seed)
 np.random.seed(CFG.seed)
-
-BASE_PATH = "../data"
-SPEC_DIR = "./tmp/dataset/hms-hbac"
-NPY_SAVE_DIR = "/data/npy/dataset/hms-hbac"

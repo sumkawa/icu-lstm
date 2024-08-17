@@ -1,9 +1,14 @@
 import os
+import sys
+
 import pandas as pd
 import numpy as np
 import joblib
 from tqdm import tqdm
 from configs.config_1 import CFG
+
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
 
 # Ensure the save directories exist
 os.makedirs(f"{CFG.NPY_SAVE_DIR}/train_spectrograms", exist_ok=True)
