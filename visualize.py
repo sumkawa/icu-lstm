@@ -1,11 +1,16 @@
 import matplotlib.pyplot as plt
 import torch
+import random
+import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from datasets.ds_1 import EEGDataset
 from configs.config_1 import CFG
 import pandas as pd
 
 NPY_SAVE_DIR = CFG.NPY_SAVE_DIR
+
+torch.manual_seed(21)
+random.seed(55)
 
 
 def visualize_batch(data_loader, num_samples=4):
@@ -54,10 +59,31 @@ if __name__ == "__main__":
     df['class_name'] = df.expert_consensus.copy()
     df['class_label'] = df.expert_consensus.map(CFG.name2label)
 
-    # Create dataset and dataloader
+    # Define augmentations + transforms
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Resize(
+            (400, 300),
+            antialias=None)  # Resizing to a fixed size (height, width)
+    ])
+    augment = transforms.Compose([
+        transforms.RandomErasing(
+            p=0.5,
+            scale=(0.02, 0.1),
+            ratio=(8, 12),  # freq mask
+            inplace=False),
+        transforms.RandomErasing(
+            p=0.5,
+            scale=(0.02, 0.10),
+            ratio=(0.5, 1.5),  # time mask
+            inplace=False)
+    ])
+    # Create dataset + dataloader
     train_dataset = EEGDataset(df=df,
                                data_dir=f"{NPY_SAVE_DIR}/train_spectrograms",
-                               mode="train")
+                               mode="train",
+                               transform=transform,
+                               augment=augment)
     train_loader = DataLoader(train_dataset,
                               batch_size=CFG.batch_size,
                               shuffle=True)
