@@ -2,8 +2,8 @@
 
 ## Index
 
-- [Description] (#description)
-- [Setup] (#setup)
+- [Description](#description)
+- [Setup](#setup)
 
 ## Description
 
