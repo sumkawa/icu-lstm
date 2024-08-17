@@ -18,7 +18,7 @@ git clone https://github.com/sumkawa/icu-lstm.git
 cd icu-lstm
 ```
 
-Install dependencies, required packages:
+Install dependencies, required packages, and setup conda development env:
 
 ```bash
 make install
