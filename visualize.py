@@ -40,8 +40,7 @@ def visualize_batch(data_loader, num_samples=4):
             fig.colorbar(cax, ax=ax)
 
         plt.tight_layout()
-        plt.show()
-
+        plt.show() 
         # Break after the first batch
         break
 
