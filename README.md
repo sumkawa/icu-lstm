@@ -44,7 +44,7 @@ Give proper user perms:
 chmod +x visualize.py parq_to_npy.py
 ```
 
-Seed database by converting parquet to npy for more efficient data loading and model compatibility:
+Seed database by converting parquet to npy for more efficient data loading and model compatibility (this step is only necessary if training with efficient net - mixnet implementations convert raw EEG data on the fly for reasons explained in the research md):
 
 ```bash
 python parq_to_npy.py
