@@ -1,5 +1,7 @@
 # EEG Harmful Brain Activity Classification - With 1d, 2d ConvNets
 
+![Repo EEG Image Heading](./assets/eegs.png)
+
 ## Index
 
 - [Description](#description)
