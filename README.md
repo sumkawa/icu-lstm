@@ -9,7 +9,9 @@
 
 ## Description
 
-This repository contains utils, custom DataSet + DataLoader classes, notebooks, etc I've developed for harmful brain activity classification, using data from the HMS Kaggle competition. Goal is also to log things that I've learned along the way with this project.
+This repository contains utils, custom DataSet + DataLoader classes, notebooks, etc I've developed for harmful brain activity classification, using data from the HMS Kaggle competition. Currently the model achieves state of the art performance, with a KLDivloss per example of 0.27. 
+
+Goal is also to log things that I've learned along the way with this project.
 
 ## What's Next?
 For the 2d model I'm looking into some other signal processing augmentation ideas, like focusing in on the middle 10 seconds of the spectrogram as inspired by [this kaggle post](https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification/discussion/472976).
