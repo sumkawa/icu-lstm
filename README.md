@@ -17,6 +17,7 @@ I'm also interested in learning the theory behind time series and classification
 Finally, I want to deploy this on my personal website so I can understand what making nice UI/UX for AI interfaces is like (coming very soon).
 
 ## Setup
+This project uses conda environments.
 
 Clone the repo:
 
