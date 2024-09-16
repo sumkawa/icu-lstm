@@ -6,6 +6,7 @@
 
 - [Description](#description)
 - [Setup](#setup)
+- [Research Notes & Though Process](./research.md)
 
 ## Description
 
