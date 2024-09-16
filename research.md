@@ -23,6 +23,7 @@ Spectrograms are visual representations of the spectrum of frequencies in a sign
 ![Example Spectrogram](./assets/specs.png)
 
 You can generate these following the instructions in the [README](./README.md)
+
 ---
 
 ### Inspiration from Seizure Classification Models
