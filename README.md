@@ -1,4 +1,4 @@
-# EEG Harmful Brain Activity Classification - With 1d, 2d ConvNets
+# EEG Harmful Brain Activity Classification - With 1D, 2D ConvNets
 
 ![Repo EEG Image Heading](./assets/eegs.png)
 
@@ -9,18 +9,20 @@
 
 ## Description
 
-This repository contains utils, custom DataSet + DataLoader classes, notebooks, etc I've developed for harmful brain activity classification, using data from the HMS Kaggle competition. Currently the model achieves state of the art performance, with a KLDivloss per example of 0.27. 
+This repository contains utilities, custom DataSet and DataLoader classes, notebooks, and other tools developed for harmful brain activity classification using data from the HMS Kaggle competition. Currently, the model achieves state-of-the-art performance, with a KLDivLoss per example of 0.27.
 
-Goal is also to log things that I've learned along the way with this project.
+I am also logging the lessons I've learned throughout this project.
 
 ## What's Next?
-For the 2d model I'm looking into some other signal processing augmentation ideas, like focusing in on the middle 10 seconds of the spectrogram as inspired by [this kaggle post](https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification/discussion/472976).
 
-I'm also interested in learning the theory behind time series and classification of time series data using 1d convolutions, so I think I'll develop a 1d conv-net.
+For the 2D model, I’m exploring other signal processing augmentation techniques, such as focusing on the middle 10 seconds of the spectrogram, inspired by [this Kaggle post](https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification/discussion/472976).
 
-Finally, I want to deploy this on my personal website so I can understand what making nice UI/UX for AI interfaces is like (coming very soon).
+I’m also exploring the theory behind time series data classification using 1D convolutions and plan to develop a 1D ConvNet.
+
+Finally, I plan to deploy this on my personal website to gain experience designing user-friendly UI/UX for AI interfaces (coming soon).
 
 ## Setup
+
 This project uses conda environments.
 
 Clone the repo:
@@ -42,7 +44,7 @@ Get data from kaggle competition:
 kaggle competitions download -c hms-harmful-brain-activity-classification -p ./data
 ```
 
-Activate conda env:
+Activate the conda environment:
 
 ```bash
 conda activate icu_classifier_env
@@ -50,19 +52,19 @@ conda activate icu_classifier_env
 
 ### Converting .parquet to .npy, visualize initial data
 
-Give proper user perms:
+Give proper user permissions:
 
 ```bash
 chmod +x visualize.py parq_to_npy.py
 ```
 
-Seed database by converting parquet to npy for more efficient data loading and model compatibility (this step is only necessary if training with efficient net - mixnet implementations convert raw EEG data on the fly for reasons explained in the research md):
+Seed database by converting parquet to npy for more efficient data loading and model compatibility (this step is only necessary if training with efficient net - mixnet implementations convert raw EEG data on the fly):
 
 ```bash
 python parq_to_npy.py
 ```
 
-(Optional) Visualize Data with matplotlib:
+(Optional) Visualize data with matplotlib:
 
 ```bash
 python visualize.py
