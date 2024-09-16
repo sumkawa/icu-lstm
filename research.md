@@ -18,8 +18,9 @@ Each line in an EEG corresponds to a channel (a recording from a specific electr
 - Each column represents a channel (e.g., T3, Pz) corresponding to different scalp locations for electrode measurements.
 
 #### Spectrograms
-Spectrograms are visual representations of the spectrum of frequencies in a signal as they vary over time. They are created by dividing the signal into windows and applying a short-time Fourier transform to each segment.
+Spectrograms are visual representations of the spectrum of frequencies in a signal as they vary over time. They are created by dividing the signal into windows and applying a short-time Fourier transform to each segment, and are much more human readable.
 
+![Example Spectrogram](./assets/eegs.png)
 ---
 
 ### Inspiration from Seizure Classification Models
