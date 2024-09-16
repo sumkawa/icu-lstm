@@ -66,9 +66,7 @@ Inspired by the model architecture from [this paper](https://iopscience.iop.org/
 The model uses **KLDivLoss** instead of Cross Entropy because KLDivLoss handles **soft targets** better. EEG classification often involves uncertainty in predictions, where even experts might not fully agree (e.g., split votes between GRDA and seizure). Training the model to handle soft probability distributions makes KLDivLoss a better choice.
 
 The formula for KLDivLoss is:
-$
-\text{KL}(q \| p) = \sum_{i=1}^{C} q_i \log\left(\frac{q_i}{p_i}\right)
-$
+$\text{KL}(q \| p) = \sum_{i=1}^{C} q_i \log\left(\frac{q_i}{p_i}\right)$
 This measures how much the true distribution $\( q \)$ diverges from the predicted distribution $\( p \)$, whereas Cross Entropy would ignore any information from classes other than the correct one.
 
 ---
@@ -103,9 +101,7 @@ Future ideas:
 ### 1D CNN Development
 
 For time-series data like EEG, **1D Convolutions** can be effective:
-$
-y(t) = (x * w)(t) = \sum_{\tau=0}^{k-1} x(t - \tau) \cdot w(\tau)
-$
+$y(t) = (x * w)(t) = \sum_{\tau=0}^{k-1} x(t - \tau) \cdot w(\tau)$
 Here, $\( y(t) \)$ is the output at time $\( t \)$, $\( x(t) \)$ is the input signal, $\( w(\tau) \)$ is the kernel, and $\( k \)$ is the kernel size.
 
 This operation is technically **cross-correlation** (not convolution), but in practice, the distinction is unimportant because a true convolution would simply require flipping the kernel.
