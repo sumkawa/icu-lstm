@@ -41,7 +41,7 @@ Challenges with processing EEG data include:
 
 ---
 
-### Model Architecture & Techniques
+### 2D CNN Model Architecture & Techniques
 
 Inspired by the model architecture from [this paper](https://iopscience.iop.org/article/10.1088/1741-2552/acb1d9), this model is lightweight and fast enough for real-time usage.
 
