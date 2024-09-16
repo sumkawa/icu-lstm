@@ -179,8 +179,6 @@ class Net(nn.Module):
 
         logits = self.head(x)
 
-        logits_after_softmax = F.log_softmax(logits, dim=1)
-
         loss = self.loss_fn(F.log_softmax(logits, dim=1), y)
         outputs = {'loss': loss}
         if not self.training:
